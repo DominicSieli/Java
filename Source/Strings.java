@@ -1,16 +1,12 @@
-using System;
+import java.util.Scanner;
 
-namespace Strings
+class Strings
 {
-	class Program
+	public static void main(String args[])
 	{
-		static void Main()
-		{
-			string name = "";
-
-			name = Console.ReadLine();
-
-			Console.WriteLine("Hello " + name);
-		}
+		System.out.print("Name: ");
+		Scanner input = new Scanner(System.in);
+		String name = input.nextLine();
+		System.out.println("Hello " + name);
 	}
 }

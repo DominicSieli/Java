@@ -1,60 +1,61 @@
-using System;
-using System.Collections.Generic;
+import java.util.*;
 
-namespace Polymorphism
+class BaseClass
 {
-	public class BaseClass
+	public void Method()
+	{}
+}
+
+class SubClass1 extends BaseClass
+{
+	@Override
+	public void Method()
 	{
-		public virtual void Method() {}
+		System.out.println("SubClass1 Method Called");
 	}
+}
 
-	public class SubClass1 : BaseClass
+class SubClass2 extends BaseClass
+{
+	@Override
+	public void Method()
 	{
-		public override void Method()
-		{
-			Console.WriteLine("SubClass1 Method Called");
-		}
+		System.out.println("SubClass2 Method Called");
 	}
+}
 
-	public class SubClass2 : BaseClass
+class SubClass3 extends BaseClass
+{
+	@Override
+	public void Method()
 	{
-		public override void Method()
-		{
-			Console.WriteLine("SubClass2 Method Called");
-		}
+		System.out.println("SubClass3 Method Called");
 	}
+}
 
-	public class SubClass3 : BaseClass
+class SubClass4 extends BaseClass
+{
+	@Override
+	public void Method()
 	{
-		public override void Method()
-		{
-			Console.WriteLine("SubClass3 Method Called");
-		}
+		System.out.println("SubClass4 Method Called");
 	}
+}
 
-	public class SubClass4 : BaseClass
+class Polymorphism
+{
+	public static void main(String args[])
 	{
-		public override void Method()
+		ArrayList<BaseClass> list = new ArrayList<BaseClass>();
+
+		list.add(new SubClass1());
+		list.add(new SubClass2());
+		list.add(new SubClass3());
+		list.add(new SubClass4());
+
+		for(BaseClass x : list)
 		{
-			Console.WriteLine("SubClass4 Method Called");
-		}
-	}
-
-	class Program
-	{
-		static void Main()
-		{
-			List<BaseClass> list = new List<BaseClass>();
-
-			list.Add(new SubClass1());
-			list.Add(new SubClass2());
-			list.Add(new SubClass3());
-			list.Add(new SubClass4());
-
-			foreach(var x in list)
-			{
-				x.Method();
-			}
+			x.Method();
 		}
 	}
 }

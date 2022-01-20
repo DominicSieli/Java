@@ -1,60 +1,56 @@
-using System;
-using System.Collections.Generic;
+import java.util.*;
 
-namespace Interfaces
+interface IClass
 {
-	public interface IClass
+	void Method();
+}
+
+class SubClass1 implements IClass
+{
+	public void Method()
 	{
-		void Method();
+		System.out.println("SubClass1 Method Called");
 	}
+}
 
-	public class SubClass1 : IClass
+class SubClass2 implements IClass
+{
+	public void Method()
 	{
-		public void Method()
-		{
-			Console.WriteLine("SubClass1 Method Called");
-		}
+		System.out.println("SubClass2 Method Called");
 	}
+}
 
-	public class SubClass2 : IClass
+class SubClass3 implements IClass
+{
+	public void Method()
 	{
-		public void Method()
-		{
-			Console.WriteLine("SubClass2 Method Called");
-		}
+		System.out.println("SubClass3 Method Called");
 	}
+}
 
-	public class SubClass3 : IClass
+class SubClass4 implements IClass
+{
+	public void Method()
 	{
-		public void Method()
-		{
-			Console.WriteLine("SubClass3 Method Called");
-		}
+		System.out.println("SubClass4 Method Called");
 	}
+}
 
-	public class SubClass4 : IClass
+class Interfaces
+{
+	public static void main(String args[])
 	{
-		public void Method()
+		ArrayList<IClass> list = new ArrayList<IClass>();
+
+		list.add(new SubClass1());
+		list.add(new SubClass2());
+		list.add(new SubClass3());
+		list.add(new SubClass4());
+
+		for(IClass x : list)
 		{
-			Console.WriteLine("SubClass4 Method Called");
-		}
-	}
-
-	class Program
-	{
-		static void Main()
-		{
-			List<IClass> list = new List<IClass>();
-
-			list.Add(new SubClass1());
-			list.Add(new SubClass2());
-			list.Add(new SubClass3());
-			list.Add(new SubClass4());
-
-			foreach(var x in list)
-			{
-				x.Method();
-			}
+			x.Method();
 		}
 	}
 }

@@ -1,30 +1,27 @@
-using System;
+import java.util.*;
 
-namespace MultipleParameters
+class Multiple
 {
-	public class Multiple
+	public static int[] Parameters(int... parameters)
 	{
-		public static int[] Parameters(params int[] parameters)
+		for(int i = 0; i < parameters.length; i++)
 		{
-			for(int i = 0; i < parameters.Length; i++)
-			{
-				parameters[i] *= 100;
-			}
-
-			return parameters;
+			parameters[i] *= 100;
 		}
+
+		return parameters;
 	}
+}
 
-	class Program
+class MultipleParameters
+{
+	public static void main(String args[])
 	{
-		static void Main()
-		{
-			int[] array = Multiple.Parameters(1,2,3,4,5,6,7,8,9,10);
+		int[] array = Multiple.Parameters(1,2,3,4,5,6,7,8,9,10);
 
-			foreach(var x in array)
-			{
-				Console.WriteLine(x);
-			}
+		for(int x : array)
+		{
+			System.out.print(x + " ");
 		}
 	}
 }
