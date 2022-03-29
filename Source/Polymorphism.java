@@ -44,18 +44,15 @@ class SubClass4 extends BaseClass
 
 class Polymorphism
 {
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
-		ArrayList<BaseClass> list = new ArrayList<BaseClass>();
+		List<BaseClass> list = new ArrayList<BaseClass>();
 
 		list.add(new SubClass1());
 		list.add(new SubClass2());
 		list.add(new SubClass3());
 		list.add(new SubClass4());
 
-		for(BaseClass x : list)
-		{
-			x.Method();
-		}
+		for(BaseClass x : list) x.Method();
 	}
 }
